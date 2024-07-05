@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array = new Array(1,2,3);
+        var complex = new Array('hello',1,true,null);
+        var empty = [1,,,4,5];   
+        console.log(empty);
+
+        //通过对length赋值，改变数组长度
+        array.length = 4 ;
+        console.log(array);
+    
+        //为数组元素赋值
+        var langs = ['java','C','Javascript','C++'];
+        langs[1] = 'Python';
+        console.log(langs);
+
+        //添加数组元素
+        var num1 = [1,2,3,4];// 输出num1的值为1,2,3,4,5
+        var length1 = num1.push(5);//输出length1结果为5       push可替换为unshift
+        
+        //删除数组元素
+        var array1 = ['a','b','c','d','e'];//输出array1的值为a,b,c,d
+        var item1 = array1.pop()//默认删除最大下标的元素      pop可替换为shift
+
+
+        //数组遍历
+        var langs2 = ['hello','nihao','hi'];
+        for(var i=0;i<langs2.length;i++){
+            console.log(langs2[i]);
+        }//langs2输出数组全部   使用for方法遍历
+        langs2.forEach(function(value,index,array){
+            console.log(value,index);
+        });//langs2输出数组全部元素和下标      使用forEach方法遍历
+
+
+        //数组元素定位
+        var langs3 = ['hah','oo','gg'];
+        var result = langs3.indexOf('oo');
+        console.log(result);//输出1
+        var result1 = langs3.indexOf('jkl');
+        console.log(result1);//输出-1          使用indexOf方法定位元素不存在返回-1，lastIndexOf按下标从大到小排序
+
+        
+    </script>
+</body>
+</html>

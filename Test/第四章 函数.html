@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>手机价格查询</h1>
+</head>
+<body>
+    <div>
+        <select name="" id="">
+            <option value="apple">苹果</option>
+            <option value="samsung">三星</option>
+            <option value="huawei">华为</option>
+            <option value="oppo">OPPO</option>
+            <option value="xiaomi">小米</option>
+        </select>
+        <button>获取手机价格</button>
+    </div>
+
+    <script>
+        //定义getPhonePrice()函数，该函数用于获取手机价格
+        function getPhonePrice(){
+            //获取选择框标签
+            var select = document.querySelector('select');
+            //获取选择框当前选择值
+            var content = select.options[select.selectedIndex].value;
+            //如果选择框当前选择值为空，则给出alert提示，并返回-1
+            if (!content) {
+                alert('请选中手机品牌');
+                return -1;
+            }
+            //定义phonePrices变量用于存放各款手机手机价格
+            var phonePrices = {
+                apple : 8688,
+                samsung : 7999,
+                huawei : 5999,
+                oppo : 3999,
+                xiaomi : 2999
+            }
+            //返回选中手机价格
+            return phonePrices[content];
+        }
+        //监听按钮单击时事件
+        document.querySelector('button').addEventListener('click',function(){
+            //调用函数获取当前选中手机价格
+            var price = getPhonePrice();
+            //当价格大于0时，使用警示框展示手机价格
+            if (price > 0 ){
+                alert('该手机的价格为：'+ price + '元');
+            }
+        },false);
+    </script>
+</body>
+</html>

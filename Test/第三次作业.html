@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function MPPX (arr=[]){                                             //定义名为MPPX的函数
+            for (var i = 1 ;i < arr.length ; i++){                          //循环冒泡轮数
+                for ( var j = 0; j < arr.length-i; j++){                    //从第一个元素遍历到最后一个元素
+                    if (arr[j] < arr[j+1]){                                 //如果前一个元素小于后一个元素，两两交换位置
+                        var temp = arr[j+1];                                //定义temp临时遍历存储数据
+                        arr[j+1] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            return arr;                                                     //返回排序后的数组
+        }
+        console.log (MPPX([22,51,64,84,94,6,1,47,56]))                      //调用MPPX函数并输出值
+    </script>
+</body>
+</html>
